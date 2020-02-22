@@ -3,4 +3,4 @@ This repository contains solutions to problems of the [code-jam](https://www.dev
 All solutions are in Rust because I'm learning Rust,
 and solving problems is a funny way of learning a new language 😃.
 
-Each branch contains a solution to each problem, with tests.
+Each solution to each problem with tests is in `src/bin/{problem number}`.
