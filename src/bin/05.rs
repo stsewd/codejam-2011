@@ -2,9 +2,9 @@ use std::collections::HashSet;
 use std::io::{self, BufRead};
 use std::iter::FromIterator;
 
-fn solve(array: &Vec<i32>) -> Vec<i32> {
+fn solve(array: &[i32]) -> Vec<i32> {
     let mut vect = Vec::from_iter(HashSet::<i32>::from_iter(array.iter().cloned()));
-    vect.sort();
+    vect.sort_unstable();
     vect
 }
 
@@ -31,7 +31,7 @@ mod tests {
     #[test]
     fn test_serie() {
         assert_eq!(
-            solve(&vec![-3, -2, 0, 0, 5, 7, 9, 11, 11, 25]),
+            solve(&[-3, -2, 0, 0, 5, 7, 9, 11, 11, 25]),
             vec![-3, -2, 0, 5, 7, 9, 11, 25]
         );
     }

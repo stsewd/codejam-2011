@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::io::{self, BufRead};
 use std::iter::FromIterator;
 
-fn solve(array: &Vec<i32>) -> i32 {
+fn solve(array: &[i32]) -> i32 {
     let mut map: HashMap<i32, i32> = HashMap::new();
     for &i in array {
         let n = map.entry(i).or_insert(0);

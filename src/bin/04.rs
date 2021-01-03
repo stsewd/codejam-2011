@@ -6,13 +6,10 @@ fn solve(line1: &str, line2: &str) -> String {
     for c in line2.chars() {
         set.insert(c.to_lowercase().next().unwrap());
     }
-    let mut result = String::new();
-    for c in line1.chars() {
-        if let None = set.get(&c.to_lowercase().next().unwrap()) {
-            result.push(c);
-        }
-    }
-    result
+    line1
+        .chars()
+        .filter(|&c| !set.contains(&c.to_lowercase().next().unwrap()))
+        .collect()
 }
 
 fn main() {

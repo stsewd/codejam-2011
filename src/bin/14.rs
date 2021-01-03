@@ -5,9 +5,9 @@ fn solve(x: i32, y: i32, z: i32) -> i32 {
     let x = x + n;
     let y = y + n;
     if z % 2 == 0 {
-        return format!("{}{}", y, x).parse().unwrap();
+        format!("{}{}", y, x).parse().unwrap()
     } else {
-        return format!("{}{}", x, y).parse().unwrap();
+        format!("{}{}", x, y).parse().unwrap()
     }
 }
 
@@ -33,4 +33,3 @@ mod tests {
         assert_eq!(136, solve(10, 3, 7));
     }
 }
-

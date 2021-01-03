@@ -1,6 +1,6 @@
 use std::io::{self, BufRead};
 
-fn solve(array: &Vec<i32>) -> Vec<i32> {
+fn solve(array: &[i32]) -> Vec<i32> {
     let mut left = Vec::new();
     let mut right = Vec::new();
     for &e in array {
@@ -31,8 +31,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let array: Vec<i32> = vec![4, -3, -100, 7, 0, 1, -6];
-        assert_eq!(vec![-3, -100, -6, 4, 7, 0, 1], solve(&array));
+        let array = &[4, -3, -100, 7, 0, 1, -6];
+        assert_eq!(vec![-3, -100, -6, 4, 7, 0, 1], solve(array));
     }
 }
-

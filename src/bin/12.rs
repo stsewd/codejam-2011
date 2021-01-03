@@ -2,18 +2,16 @@ use std::convert::TryFrom;
 use std::io::{self, BufRead};
 use std::iter::FromIterator;
 
-fn solve(array: &Vec<i32>) -> i32 {
+fn solve(array: &[i32]) -> i32 {
     let mut left: i32 = 0;
     let mut right: i32 = array.get(1..).unwrap().iter().sum();
-    let mut index: i32 = 0;
 
-    for &e in array.get(1..).unwrap() {
+    for (index, &e) in array.get(1..).unwrap().iter().enumerate() {
         if left == right {
             return i32::try_from(index).unwrap();
         }
         left += array.get(index as usize).unwrap();
         right -= e;
-        index += 1;
     }
     -1
 }

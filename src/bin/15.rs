@@ -1,6 +1,6 @@
 use std::io::{self, BufRead};
 
-fn solve(array: &Vec<i32>) -> i32 {
+fn solve(array: &[i32]) -> i32 {
     let mut max = *array.first().unwrap();
     for i in 0..array.len() {
         let mut current = 0;
@@ -30,7 +30,6 @@ mod tests {
 
     #[test]
     fn test() {
-        assert_eq!(14, solve(&vec![4, -3, 7, 2, 4, -5, 1, 2]));
+        assert_eq!(14, solve(&[4, -3, 7, 2, 4, -5, 1, 2]));
     }
 }
-

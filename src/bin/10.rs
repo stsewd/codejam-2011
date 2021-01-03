@@ -12,13 +12,12 @@ fn solve(x: u32, y: u32) -> i32 {
 fn is_perfect(x: u32) -> bool {
     let mut count = 0;
     let pow: u32 = (x as f64).powf(0.5) as u32;
-    for i in 1..(pow + 1 + 1) {
+    for i in 1..=(pow + 1) {
         if x % i == 0 {
             count += i;
         }
     }
-    let r = count == x;
-    r
+    count == x
 }
 
 fn main() {

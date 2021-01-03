@@ -3,7 +3,7 @@ use std::io::{self, BufRead};
 fn solve(x: i32, y: i32, z: i32) -> i32 {
     let mut n = x;
     let mut sum = 0;
-    for i in 1..z + 1 {
+    for i in 1..=z {
         if i >= y {
             sum += n;
         }
@@ -33,4 +33,3 @@ mod tests {
         assert_eq!(10, solve(5, 2, 2));
     }
 }
-

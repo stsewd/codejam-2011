@@ -6,7 +6,7 @@ fn solve(line: &str) -> u32 {
     let mut a_count = 0;
     let mut has_a = false;
     for c in line.chars() {
-        if let Some(_) = space_chars.get(&c) {
+        if space_chars.contains(&c) {
             if has_a {
                 a_count += 1;
                 has_a = false;

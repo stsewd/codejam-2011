@@ -1,7 +1,7 @@
 use std::io::{self, BufRead};
 
 fn solve(x: u32) -> bool {
-    for i in 1..(x / 2 + 1 + 1) {
+    for i in 1..=(x / 2 + 1) {
         if i * i == x {
             return true;
         }

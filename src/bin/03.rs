@@ -1,4 +1,4 @@
-use std::io;
+use std::io::{self, BufRead};
 
 fn solve(x: f64, y: f64) -> f64 {
     if x <= 0.0 || y <= 0.0 {
@@ -7,7 +7,7 @@ fn solve(x: f64, y: f64) -> f64 {
     if x > 255.0 || y > 255.0 {
         return -1.0;
     }
-    return get_number(x, y);
+    get_number(x, y)
 }
 
 fn get_number(x: f64, y: f64) -> f64 {
@@ -15,11 +15,10 @@ fn get_number(x: f64, y: f64) -> f64 {
 }
 
 fn main() {
-    let mut buffer = String::new();
-
-    io::stdin().read_line(&mut buffer).unwrap();
-
-    let mut iter = buffer.split_whitespace();
+    let stdin = io::stdin();
+    let mut lines = stdin.lock().lines();
+    let line = lines.next().unwrap().unwrap();
+    let mut iter = line.split_whitespace();
 
     let x: f64 = iter.next().unwrap().parse().unwrap();
     let y: f64 = iter.next().unwrap().parse().unwrap();

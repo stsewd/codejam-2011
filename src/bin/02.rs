@@ -7,12 +7,12 @@ fn solve(x: i32, y: i32) -> i32 {
     if x > 255 || y > 255 {
         return -1;
     }
-    return get_number(x, y);
+    get_number(x, y)
 }
 
 fn get_number(x: i32, y: i32) -> i32 {
     let mut result = x;
-    for i in 1..(y + 1) {
+    for i in 1..=y {
         result *= i;
     }
     result

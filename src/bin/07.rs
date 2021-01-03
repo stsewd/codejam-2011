@@ -40,14 +40,7 @@ fn solve(line: &str) -> String {
     .cloned()
     .collect();
 
-    let mut solution = String::new();
-    for c in line.chars() {
-        solution.push(match abc.get(&c) {
-            Some(a) => *a,
-            None => c,
-        });
-    }
-    solution
+    line.chars().map(|c| *abc.get(&c).unwrap_or(&c)).collect()
 }
 
 fn main() {

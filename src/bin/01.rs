@@ -7,14 +7,14 @@ fn solve(x: i32, y: i32) -> i32 {
     if x > 255 || y > 255 {
         return -1;
     }
-    return get_number(x) + get_number(y);
+    get_number(x) + get_number(y)
 }
 
 fn get_number(x: i32) -> i32 {
     if x % 2 == 0 {
-        return 6 - (x - 2);
+        6 - (x - 2)
     } else {
-        return 7 + (x / 2);
+        7 + (x / 2)
     }
 }
 
